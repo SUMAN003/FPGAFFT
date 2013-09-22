@@ -7,7 +7,7 @@
 #define M_PI 3.14159265358979324
 #endif
 
-#define N 16
+#define N 128
 
 void TestFft(const char* title, const kiss_fft_cpx in[N], kiss_fft_cpx out[N])
 {
@@ -49,7 +49,7 @@ int main(void)
     TestFft("Ones (complex)", in, out);
 
     for (i = 0; i < N; i++)
-        in[i].r = sin(2 * M_PI * 4 * i / N), in[i].i = 0;
+        in[i].r = cos(2 * M_PI * 4 * i / N), in[i].i = 0;
     TestFft("SineWave (complex)", in, out);
 
     return 0;
